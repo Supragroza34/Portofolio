@@ -2,9 +2,9 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
-// User/org GitHub Pages site (Supragroza34.github.io) is served from the
-// domain root, so base stays '/'.
+// Project-page GitHub Pages site, served at
+// https://supragroza34.github.io/Portofolio/ — base must match the repo name.
 export default defineConfig({
-  base: '/',
+  base: '/Portofolio/',
   plugins: [react(), tailwindcss()],
 })

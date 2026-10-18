@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://supragroza34.github.io/sitemap.xml
+Sitemap: https://supragroza34.github.io/Portofolio/sitemap.xml

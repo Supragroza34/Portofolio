@@ -1,7 +1,7 @@
 # Amey Tripathi — Portfolio
 
 Personal portfolio site built with React, Vite, TypeScript and Tailwind CSS, deployed to
-GitHub Pages at [supragroza34.github.io](https://supragroza34.github.io).
+GitHub Pages at [supragroza34.github.io/Portofolio](https://supragroza34.github.io/Portofolio/).
 
 ## Stack
 
@@ -70,13 +70,13 @@ src/
 
 ## Deploying
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which installs dependencies,
+Pushing to `master` triggers `.github/workflows/deploy.yml`, which installs dependencies,
 lints, builds, and publishes `dist/` to GitHub Pages via `actions/deploy-pages`.
 
 One-time repo setup (only needed once):
 
 1. In the repo's **Settings → Pages**, set **Source** to "GitHub Actions".
-2. Push to `main` — the workflow builds and deploys automatically.
+2. Push to `master` — the workflow builds and deploys automatically.
 
 To deploy manually instead: `npm run build && npm run deploy` (uses `gh-pages` to push
 `dist/` to the `gh-pages` branch — only needed if you're not using the Actions workflow).

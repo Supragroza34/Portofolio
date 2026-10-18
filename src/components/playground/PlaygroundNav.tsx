@@ -39,7 +39,7 @@ export const DEMOS: DemoMeta[] = [
 ]
 
 const REPO_BASE =
-  'https://github.com/Supragroza34/Supragroza34.github.io/blob/main/src/components/playground/demos'
+  'https://github.com/Supragroza34/Portofolio/blob/master/src/components/playground/demos'
 
 export function sourceUrl(file: string) {
   return `${REPO_BASE}/${file}`
