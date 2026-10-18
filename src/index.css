@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-paper: #ffffff;
+  --color-paper-dim: #eaf1f9;
+  --color-ink: #1b2838;
+  --color-ink-dim: #24374c;
+  --color-copper: #f16a1f;
+  --color-copper-dim: #d6590f;
+  --color-teal: #4f81c0;
+  --color-teal-dim: #3d6aa3;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+[data-theme='dark'] body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Visible, consistent keyboard focus ring everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-copper);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background-color: var(--color-copper);
+  color: var(--color-paper);
+}
