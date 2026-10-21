@@ -1,7 +1,7 @@
 # Amey Tripathi — Portfolio
 
 Personal portfolio site built with React, Vite, TypeScript and Tailwind CSS, deployed to
-GitHub Pages at [supragroza34.github.io/Portofolio](https://supragroza34.github.io/Portofolio/).
+GitHub Pages at [ameytrip.tech](https://ameytrip.tech/).
 
 ## Stack
 
