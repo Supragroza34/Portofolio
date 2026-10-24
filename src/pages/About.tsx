@@ -154,9 +154,13 @@ export function About() {
 
       <section className="mx-auto max-w-3xl border-t border-ink/10 px-4 py-16 sm:px-6 dark:border-paper/10">
         <h2 className="font-display text-2xl font-semibold text-ink dark:text-paper">
-          KCL Dean's Commendations
+          Awards
         </h2>
-        <div className="mt-6 grid grid-cols-3 gap-4 max-w-md">
+
+        <h3 className="mt-6 font-mono text-xs uppercase tracking-widest text-copper">
+          KCL Dean's Commendations
+        </h3>
+        <div className="mt-4 grid grid-cols-3 gap-4 max-w-md">
           {deansCommendations.map((cert) => (
             <a
               key={cert.label}
@@ -176,9 +180,6 @@ export function About() {
           ))}
         </div>
 
-        <h2 className="mt-14 font-display text-2xl font-semibold text-ink dark:text-paper">
-          Awards
-        </h2>
         <ul className="mt-6 max-w-2xl space-y-2">
           {awards.map((award) => (
             <li
