@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchAssets } from '../lib/api'
-import { about, personal, experience, skills, awards } from '../data/profile'
+import { about, personal, experience, skills, awards, deansCommendations } from '../data/profile'
 import type { SocialLink } from '../data/profile'
 
 function SocialIcon({ kind }: { kind: SocialLink['kind'] }) {
@@ -154,6 +154,29 @@ export function About() {
 
       <section className="mx-auto max-w-3xl border-t border-ink/10 px-4 py-16 sm:px-6 dark:border-paper/10">
         <h2 className="font-display text-2xl font-semibold text-ink dark:text-paper">
+          KCL Dean's Commendations
+        </h2>
+        <div className="mt-6 grid grid-cols-3 gap-4 max-w-md">
+          {deansCommendations.map((cert) => (
+            <a
+              key={cert.label}
+              href={cert.pdfUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group block overflow-hidden rounded-md border border-ink/10 transition hover:border-copper dark:border-paper/10"
+              title={cert.label}
+            >
+              <img
+                src={cert.thumbnailUrl}
+                alt={`${cert.label} Dean's Commendation certificate`}
+                className="aspect-[827/1170] w-full object-cover transition group-hover:opacity-80"
+                loading="lazy"
+              />
+            </a>
+          ))}
+        </div>
+
+        <h2 className="mt-14 font-display text-2xl font-semibold text-ink dark:text-paper">
           Awards
         </h2>
         <ul className="mt-6 max-w-2xl space-y-2">

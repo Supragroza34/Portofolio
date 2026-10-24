@@ -229,22 +229,31 @@ export interface Award {
   pdfUrl?: string
 }
 
-export const awards: Award[] = [
+export interface AwardCertificate {
+  label: string
+  pdfUrl: string
+  thumbnailUrl: string
+}
+
+export const deansCommendations: AwardCertificate[] = [
   {
-    title: "King's College London Dean's Commendation for AKC — Semester 1",
-    year: '2026',
+    label: 'Semester 1',
     pdfUrl: '/awards/kcl-akc-sem1-deans-commendation-2026.pdf',
+    thumbnailUrl: '/awards/thumbs/kcl-akc-sem1-deans-commendation-2026.png',
   },
   {
-    title: "King's College London Dean's Commendation for AKC — Semester 2",
-    year: '2026',
+    label: 'Semester 2',
     pdfUrl: '/awards/kcl-akc-sem2-deans-commendation-2026.pdf',
+    thumbnailUrl: '/awards/thumbs/kcl-akc-sem2-deans-commendation-2026.png',
   },
   {
-    title: "King's College London Dean's Commendation for AKC — Semester 2 Essay",
-    year: '2026',
+    label: 'Semester 2 Essay',
     pdfUrl: '/awards/kcl-akc-sem2-essay-deans-commendation-2026.pdf',
+    thumbnailUrl: '/awards/thumbs/kcl-akc-sem2-essay-deans-commendation-2026.png',
   },
+]
+
+export const awards: Award[] = [
   { title: 'BPhO Computational Challenge — Gold', year: '2024' },
   { title: 'UKMT Senior Maths Challenge — Silver', year: '2024' },
   { title: 'Young Enterprise — Regional Finalist', year: '2023' },
