@@ -32,7 +32,7 @@ export function GitHubRepos() {
       className="mx-auto max-w-6xl border-t border-ink/10 px-4 py-20 sm:px-6 dark:border-paper/10"
     >
       <SectionHeading
-        index="04 — GitHub"
+        index="03 — GitHub"
         title="Live from GitHub"
         description={`Pulled at runtime from github.com/${github.username} — forks and the profile repo are hidden.`}
       />

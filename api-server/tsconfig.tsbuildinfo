@@ -1,0 +1,1 @@
+{"root":["./api/assets/cv.ts","./api/assets/index.ts","./api/assets/photo.ts","./api/auth/login.ts","./api/blog/[id].ts","./api/blog/index.ts","./api/blog/slug/[slug].ts","./lib/auth.ts","./lib/cors.ts","./lib/db.ts","./lib/uploadAsset.ts"],"version":"5.9.3"}

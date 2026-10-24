@@ -35,7 +35,7 @@ export function PlaygroundShell() {
       className="mx-auto max-w-6xl border-t border-ink/10 px-4 py-20 sm:px-6 dark:border-paper/10"
     >
       <SectionHeading
-        index="05 — Frontend Playground"
+        index="01 — Playground"
         title="Live, interactive demos"
         description="Five small, production-quality demos — each lazy-loaded, each with its source on GitHub."
       />

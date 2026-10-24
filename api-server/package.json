@@ -1,0 +1,23 @@
+{
+  "name": "personalwebsite-api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "migrate": "node --env-file=.env scripts/migrate.mjs",
+    "seed-admin": "node --env-file=.env scripts/seed-admin.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.0",
+    "@vercel/blob": "^2.8.2",
+    "bcryptjs": "^2.4.3",
+    "jose": "^5.9.6"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^22.10.0",
+    "@vercel/node": "^3.2.0",
+    "typescript": "^5.6.0",
+    "vercel": "^65.2.0"
+  }
+}

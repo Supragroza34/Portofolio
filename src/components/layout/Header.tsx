@@ -1,16 +1,18 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
 
 const NAV_ITEMS = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'GitHub', href: '#github' },
-  { label: 'Playground', href: '#playground' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Education', href: '#education' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', to: '/about' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'CV', to: '/cv' },
+  { label: 'Projects', to: '/projects' },
 ]
+
+const linkClass = ({ isActive }: { isActive: boolean }) =>
+  isActive
+    ? 'text-copper'
+    : 'text-ink/70 transition-colors hover:text-copper dark:text-paper/70 dark:hover:text-copper'
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -18,23 +20,20 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/90 backdrop-blur dark:border-paper/10 dark:bg-ink/90">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a
-          href="#top"
+        <NavLink
+          to="/about"
           className="font-mono text-sm font-medium tracking-tight text-ink dark:text-paper"
         >
-          AT<span className="text-copper">.</span>
-        </a>
+          Amey Tripathi<span className="text-copper">.</span>
+        </NavLink>
 
         <nav aria-label="Primary" className="hidden md:block">
           <ul className="flex items-center gap-6 font-mono text-xs uppercase tracking-wide">
             {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="text-ink/70 transition-colors hover:text-copper dark:text-paper/70 dark:hover:text-copper"
-                >
+              <li key={item.to}>
+                <NavLink to={item.to} end className={linkClass}>
                   {item.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -73,14 +72,17 @@ export function Header() {
         <nav id="mobile-nav" aria-label="Mobile" className="md:hidden">
           <ul className="flex flex-col gap-1 border-t border-ink/10 px-4 py-3 font-mono text-sm uppercase tracking-wide dark:border-paper/10">
             {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  end
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-ink/80 hover:text-copper dark:text-paper/80 dark:hover:text-copper"
+                  className={({ isActive }) =>
+                    `block py-2 ${isActive ? 'text-copper' : 'text-ink/80 hover:text-copper dark:text-paper/80'}`
+                  }
                 >
                   {item.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>

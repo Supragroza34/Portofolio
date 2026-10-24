@@ -31,6 +31,7 @@ export const about = {
     'considered as the backend behind it.',
   education: {
     institution: "King's College London",
+    institutionUrl: 'https://www.kcl.ac.uk',
     degree: 'BSc Computer Science with a Year in Industry',
     years: '2024 – 2028',
     predicted: 'Predicted First',
@@ -41,6 +42,7 @@ export interface ExperienceEntry {
   id: string
   role: string
   org: string
+  orgUrl?: string
   period: string
   summary: string
   highlights: string[]
@@ -51,6 +53,7 @@ export const experience: ExperienceEntry[] = [
     id: 'lloyds',
     role: 'Software Engineering Industrial Placement',
     org: 'Lloyds Banking Group',
+    orgUrl: 'https://www.lloydsbankinggroup.com',
     period: 'Jun 2026 – Present',
     summary:
       'Agile team modernising and scaling the Home Insurance Customer Claims Platform.',
@@ -141,9 +144,9 @@ export const projects: Project[] = [
   },
   {
     id: 'planetary-simulations',
-    name: 'Motion Simulator / Planetary Simulations',
+    name: 'Motion Simulator',
     description:
-      '3D orbital mechanics simulator modelling gravitational motion between bodies, inspired by BPhO work.',
+      '3D orbital mechanics simulator modelling gravitational motion between bodies, inspired by BPhO Computational Challenge work.',
     tech: ['Python', '3D Graphics', 'Physics'],
     github: 'https://github.com/Supragroza34/Planetary-Simulations',
     size: 'lg',
@@ -222,10 +225,26 @@ export const kclGrades: ModuleGrade[] = [
 export interface Award {
   title: string
   year: string
+  /** Path to a certificate PDF in /public/awards, e.g. '/awards/bpho-gold.pdf' */
+  pdfUrl?: string
 }
 
 export const awards: Award[] = [
-  { title: "3x King's College London Dean's Commendation for AKC", year: '2026' },
+  {
+    title: "King's College London Dean's Commendation for AKC — Semester 1",
+    year: '2026',
+    pdfUrl: '/awards/kcl-akc-sem1-deans-commendation-2026.pdf',
+  },
+  {
+    title: "King's College London Dean's Commendation for AKC — Semester 2",
+    year: '2026',
+    pdfUrl: '/awards/kcl-akc-sem2-deans-commendation-2026.pdf',
+  },
+  {
+    title: "King's College London Dean's Commendation for AKC — Semester 2 Essay",
+    year: '2026',
+    pdfUrl: '/awards/kcl-akc-sem2-essay-deans-commendation-2026.pdf',
+  },
   { title: 'BPhO Computational Challenge — Gold', year: '2024' },
   { title: 'UKMT Senior Maths Challenge — Silver', year: '2024' },
   { title: 'Young Enterprise — Regional Finalist', year: '2023' },
