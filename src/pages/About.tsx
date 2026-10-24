@@ -28,11 +28,13 @@ function SocialIcon({ kind }: { kind: SocialLink['kind'] }) {
 }
 
 export function About() {
-  const [photoUrl, setPhotoUrl] = useState<string | null>(null)
+  const [photoUrl, setPhotoUrl] = useState<string>('/avatar.jpg')
 
   useEffect(() => {
     fetchAssets()
-      .then((assets) => setPhotoUrl(assets.profile_photo?.url ?? null))
+      .then((assets) => {
+        if (assets.profile_photo?.url) setPhotoUrl(assets.profile_photo.url)
+      })
       .catch(() => {})
   }, [])
 
@@ -41,7 +43,7 @@ export function About() {
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
           <img
-            src={photoUrl ?? '/avatar-placeholder.svg'}
+            src={photoUrl}
             alt={personal.name}
             className="h-28 w-28 shrink-0 rounded-full border border-ink/10 object-cover dark:border-paper/10"
           />
