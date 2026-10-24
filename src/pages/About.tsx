@@ -158,7 +158,7 @@ export function About() {
         </h2>
 
         <h3 className="mt-6 font-mono text-xs uppercase tracking-widest text-copper">
-          KCL Dean's Commendations
+          KCL Dean&apos;s Commendations
         </h3>
         <div className="mt-4 grid grid-cols-3 gap-4 max-w-md">
           {deansCommendations.map((cert) => (
